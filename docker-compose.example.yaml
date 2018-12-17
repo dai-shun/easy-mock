@@ -1,0 +1,32 @@
+version: "3"
+services:
+  easy-mock:
+    build: .
+    volumes:
+      - /data/upload:/upload
+    depends_on:
+      - redis
+      - mongo
+    ports:
+      - 7300:7300
+
+  redis:
+    image: redis:5.0.3
+    restart: always
+    ports:
+      - 6379:6379
+
+  mongo:
+    image: mongo:4.1.6-xenial
+    restart: always
+    volumes:
+      - /data/mongodb:/data/db
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: root
+      ME_CONFIG_BASICAUTH_PASSWORD:
