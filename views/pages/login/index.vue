@@ -236,10 +236,10 @@ export default {
     },
     login () {
       const cookies = new Cookies()
-      const allowUsers = ['daishun@kuainiugroup.com', 'nikizhong@kuainiugroup.com']
+      const allowUsers = ['daishun', 'nikizhong']
       if (allowUsers.indexOf(this.userName) < 0) {
         alert('权限不够不能创建用户')
-        throw new Error('权限不够不能创建用户')
+        return
       }
       api.u.login({
         messageUnless: ['用户不存在'],
