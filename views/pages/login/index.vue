@@ -236,8 +236,7 @@ export default {
     },
     login () {
       const cookies = new Cookies()
-      console.log(config)
-      const allowUsers = config.get('allowUsers')
+      const allowUsers = ['daishun@kuainiugroup.com', 'nikizhong@kuainiugroup.com']
       if (allowUsers.indexOf(this.userName) < 0) {
         alert('权限不够不能创建用户')
         throw new Error('权限不够不能创建用户')
