@@ -237,7 +237,7 @@ export default {
     login () {
       const cookies = new Cookies()
       const allowUsers = config.allowUsers
-      if (allowUsers.indexOf(this.userName)) {
+      if (allowUsers.indexOf(this.userName) < 0) {
         alert('权限不够不能创建用户')
         throw new Error('权限不够不能创建用户')
       }
