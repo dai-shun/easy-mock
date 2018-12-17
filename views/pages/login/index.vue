@@ -236,6 +236,10 @@ export default {
     },
     login () {
       const cookies = new Cookies()
+      const allowUsers = config.allowUsers;
+      if (allowUsers.indexOf(this.userName)) {
+        throw new Error("权限不够不能创建用户");
+      }
       api.u.login({
         messageUnless: ['用户不存在'],
         data: {
