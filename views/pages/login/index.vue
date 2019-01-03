@@ -237,7 +237,7 @@ export default {
     login () {
       const cookies = new Cookies()
       const allowUsers = ['daishun', 'nikizhong', 'liyuling', 'yangjianjun', 'liyonghui', 'fanshujun', 'guixiugang',
-        'zengchao', 'tayloryang']
+        'zengchao', 'tayloryang', 'leannahe']
       if (allowUsers.indexOf(this.userName) < 0) {
         alert('权限不够不能创建用户')
         return
